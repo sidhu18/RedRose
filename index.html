@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RedRose</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <div id=logo>
+            <img src="asset/logo.png" alt="logo">
+
+            <div id="items">
+                <li>
+                    <ul>Mac</ul>
+                    <ul>iPad</ul>
+                    <ul>iPhone</ul>
+                    <ul>iWatch</ul>
+                </li>
+            </div>
+        </div>
+    </nav>
+    <section>
+        <div id=banner>
+            <div id="iphone">
+                <img src="asset/iphone.png" alt="iphone" class = "anim">
+            </div>
+
+
+            <div id="contents">
+                <p>EXCLUSIVE</p>
+                <h5>
+                    iPhone X
+                </h5>
+                <div id="product">
+                    <p>
+                        PRODUCT (RED)
+                    </p>
+                </div>
+                <div id="product-desc">
+                    <p>
+                        For 12 years, your support of our partnership with (RED) has helped fund programs to treat
+                        HIV/AIDS.
+                        A portion of each purchase goes towards counseling, testing, and medication to prevent mothers
+                        from
+                        passing HIV to their babies. So far, you’ve helped us raise over $200 million for (RED).
+                        <br>
+                        <strong>Learn more</strong>
+                        <br>
+                        <br>
+                        <strong>Select a varient </strong>
+                    </p>
+                </div>
+
+                <div id="products">
+                    <li>
+                        <ul>
+                            <p id="small">4 GB + 64 GB</p>
+                            <h1>$799</h1>
+                        </ul>
+                        <ul>
+                            <p id="large">6 GB + 128 GB</p>
+                            <h1>$999</h1>
+                        </ul>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+
+        const images = document.querySelector('.anim');
+
+        observer = new IntersectionObserver((entries) => {
+
+            console.log(entries);
+
+            if(entries[0].intersectionRatio > 0){
+                entries[0].target.style.animation = 'anim1 1.5s 0.5s forwards ease-out';
+            }
+            else{
+                entries[0].target.style.animation = 'none'
+            }
+
+        })
+
+        observer.observe(images)
+
+    </script>
+
+
+</body>
+
+</html>
